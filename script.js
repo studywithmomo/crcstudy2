@@ -91,7 +91,7 @@ input.style.display = "block";
  
   input.disabled = false;
   input.style.display = "block";
-  input.scrollIntoView({ behavior: "smooth", block: "center" });
+  //input.scrollIntoView({ behavior: "smooth", block: "center" });
   input.focus();
 }
 
