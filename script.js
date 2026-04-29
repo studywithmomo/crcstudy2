@@ -181,22 +181,14 @@ resultDiv.innerHTML = `
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   ">
 
-    <!-- ウーパールーパー＋吹き出し -->
-    <div style="position: relative; display: inline-block;">
-      <img src="ikimono_wooper-looper_12304.jpg" style="width:160px;">
+       <!-- ウーパールーパー＋吹き出し -->
+    <div style="position: relative;">
+      <img src="wooper.png" style="width:160px;">
 
-      <div style="
+      <div class="bubble" style="
         position: absolute;
         top: -10px;
         left: 130px;
-        background: white;
-        border: 2px solid #ffb6c1;
-        border-radius: 18px;
-        padding: 10px 14px;
-        font-size: 18px;
-        color: #5c4635;
-        max-width: 200px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       ">
         ${rate === 100 ? "完璧！すごすぎる！" :
           rate >= 80 ? "いいかんじ！えらいね" :
@@ -205,7 +197,7 @@ resultDiv.innerHTML = `
       </div>
     </div>
 
-    <!-- スコア（ここが大事） -->
+    <!-- スコア -->
     <div style="font-size:20px;">
       ${totalQuestions}問中 <b>${correctCount}</b>問正解
     </div>
@@ -217,7 +209,6 @@ resultDiv.innerHTML = `
     ">
       正答率：${rate}%
     </div>
-
   </div>
 `;
 return;
