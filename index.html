@@ -300,8 +300,13 @@ select:focus {
   border-radius: 20px;
   padding: 25px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 20px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
 .result-flex {
@@ -325,10 +330,11 @@ select:focus {
 
 /* ウーパー画像 */
 .wooper-img {
-  width: 150px;
+  width: 240px;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 /* 吹き出し */
@@ -369,6 +375,10 @@ select:focus {
   font-weight: bold;
   color: #c2185b;
   margin-top: 6px;
+}
+.result-text {
+  flex: 1;
+  min-width: 320px;
 }
 }
           </style>
