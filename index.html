@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Medical English Typing</title>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at 20% 30%, #ffe4e1 0%, transparent 40%),
+              radial-gradient(circle at 80% 70%, #e0f7fa 0%, transparent 40%),
+              #fffaf3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== メインコンテナ ===== */
+#gameContainer {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  max-width: 900px;
+  max-height: none; 
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25);
+  overflow: visible;
+}
+
+#sentence {
+  font-size: 50px;
+  margin-top: 24px;
+}
+
+#jp {
+  font-size: 30px;
+  color: blue;
+  margin-top: 10px;
+}
+
+/* ===== 上部コントロール ===== */
+#controls {
+  flex-shrink: 0;
+}
+
+/* ===== 問題文 ===== */
+#sentence {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 48px;
+  font-weight: 500;   /* 700は太すぎ */
+  letter-spacing: 1px;
+}
+#sentence span {
+  font-family: inherit;
+}
+
+#jp {
+  font-size: 30px;
+  color: blue;
+  margin-top: 10px;
+}
+
+/* ===== 中央スクロール領域 ===== */
+#result,
+#rankingBox {
+  overflow-y: auto;
+}
+
+/* ★ ランキングは必ず見える */
+#rankingBox {
+  font-size: 18px;          /* 少し小さく */
+  line-height: 1.4;
+  padding: 12px 16px;
+  margin: 16px auto;
+  max-width: 320px;         /* 横を抑える */
+}
+
+/* ===== 入力欄は固定 ===== */
+#input {
+  font-size: 40px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 18px;
+  border: 2px solid #f8a5c2;
+  padding: 12px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  flex-shrink: 0;
+  outline: none;
+  box-shadow: 0 0 10px rgba(248, 165, 194, 0.35);
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+#input:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 16px rgba(214, 51, 132, 0.45);
+}
+
+    #result {
+  color: #ff6fae;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+   #retryBtn {
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  color: white;
+  border: none;
+  border-radius: 999px; /* 超丸い */
+  padding: 14px 32px;
+  font-size: 18px;
+  font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #d94c8a;
+  transition: transform 0.1s, box-shadow 0.1s;
+  display: block;
+  margin: 20px auto;
+
+}
+
+#retryBtn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 #d94c8a;
+}
+
+#retryBtn:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #d94c8a;
+}
+#rankingBox {
+  font-size: 18px;                 /* 少し小さく */
+  color: #555;
+  border: 3px solid #ffb6c1;       /* かわいいピンク枠 */
+  border-radius: 20px;             /* 丸み */
+  padding: 12px 16px;
+  margin: 20px auto;
+  width: fit-content;              /* 中身サイズに合わせる */
+  background-color: #fff;          /* 白背景で読みやすく */
+  line-height: 1.4;
+  max-height: none;       /* スクロールさせない */
+  width: 100%;
+  max-width: 500px;
+}
+
+select {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 16px;
+  border: 2px solid #ffb6c1;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 8px;
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+}
+
+select:focus {
+  outline: none;
+  border-color: #ff8fab;
+  box-shadow: 0 0 0 3px rgba(255, 143, 171, 0.3);
+}
+
+
+#backgroundAnimal {
+      position: absolute;
+      top: 45%;           /* 縦中央 */
+      left: 50%;          /* 横中央 */
+      transform: translate(-50%, -50%);
+      width: 1500px;       /* 好きな大きさに調整 */
+      opacity: 0.3;       /* ふんわり表示 */
+      pointer-events: none; /* タイピングやボタン操作を邪魔しない */
+      z-index: -1;        /* 背景扱い */
+      animation: float 6s ease-in-out infinite alternate;
+    }
+
+
+#hideSentence {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* 見た目担当 */
+.hide-toggle span {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid #ffb6c1;
+  background: #fff;
+  color: #ff6fae;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 #ffd1dc;
+}
+
+/* ホバー時 */
+.hide-toggle:hover span {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #ffd1dc;
+}
+
+/* チェックON時 */
+.hide-toggle input:checked + span {
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  color: white;
+  box-shadow: 0 4px 0 #d94c8a;
+}
+
+#retryBtn {
+  position: relative;
+  z-index: 10;
+}
+
+#showAnswerBtn {
+  background: linear-gradient(135deg, #ffd6e8, #ffe8f3);
+  color: #5a3d4d;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
+}
+
+#showAnswerBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+#showAnswerBtn:active {
+  transform: scale(0.97);
+}
+
+
+          </style>
+</head>
+
+<body>
+
+<img id="backgroundAnimal" src="irasutoya1.png" alt="かわいい動物">
+
+<div id="gameContainer">
+    <div id="controls">
+
+ 
+<!-- ② 問題形式 -->
+<select id="questionMode">
+  <option value="word" selected>単語</option>
+  <option value="query">クエリ英文</option>
+</select>
+
+<!-- ③ 英単語ジャンル（最初は隠す） -->
+<select id="wordCategory" style="display:none;">
+  <option value="all"> すべて</option>
+  <option value="clinical">略語・治験用語</option>
+  <option value="disease"> 疾患・病態</option>
+  <option value="symptom"> 症状</option>
+  <option value="treatment"> 治療・介入</option>
+</select>
+
+  <div id="sentence"></div>
+  <div id="jp"></div>
+
+  <button id="retryBtn" style="display:none; font-size:28px;">
+  もう一度挑戦する
+  </button>
+
+  <button id="showAnswerBtn">正解を表示</button>
+
+  <input id="input" type="text" placeholder="ここにタイプ"autofocus>
+
+  <div id="result"></div>
+
+
+  <!-- ★ 読み込み順は絶対にこの順 -->
+  <script src="sentences.js"></script>
+  <script src="script.js"></script>
+<script>
+  console.log("HTML loaded");
+</script>
+
+</body>
+</html>
