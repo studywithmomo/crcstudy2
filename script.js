@@ -22,6 +22,15 @@ const resultDiv = document.getElementById("result");
 console.log("JS loaded");
 const showAnswerBtn = document.getElementById("showAnswerBtn");
 
+document.getElementById("questionMode").addEventListener("change", function () {
+  const gameContainer = document.getElementById("gameContainer");
+
+  if (this.value === "query") {
+    gameContainer.classList.add("query-mode");
+  } else {
+    gameContainer.classList.remove("query-mode");
+  }
+});
 // --- 問題表示 ---
 function loadSentence() {
   
