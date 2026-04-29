@@ -269,50 +269,43 @@ select:focus {
     padding: 12px 18px;
   }
   
-  /* ===== 結果画面レイアウト ===== */
+/* ===== 結果画面（PC共通） ===== */
 .result-card {
   background: #fff0f6;
   border-radius: 24px;
-  padding: 30px;
+  padding: 24px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  max-width: 950px;
+  max-width: 900px;
   margin: 20px auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
 }
 
 .result-flex {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   align-items: center;
-  gap: 35px;
+  gap: 24px;
+  flex-wrap: wrap;
 }
-  
+
 .result-right {
   flex: 1;
-  min-width: 380px;
-  text-align: left;
+  min-width: 260px;
+  text-align: center;
 }
 
 .result-character {
-  flex: 0 0 280px;
+  flex: 0 0 220px;
   display: flex;
   justify-content: center;
 }
 
-/* ウーパー画像 */
 .wooper-img {
-  width: 260px;
+  width: 200px;
+  max-width: 100%;
   height: auto;
   border-radius: 24px;
-  object-fit: cover;
-  flex-shrink: 0;
 }
 
-/* 吹き出し */
 .bubble {
   position: relative;
   background: white;
@@ -321,25 +314,21 @@ select:focus {
   padding: 14px 18px;
   font-size: 18px;
   color: #5c4635;
-
-  min-width: 260px;
-  max-width: 320px;
+  max-width: 280px;
   line-height: 1.5;
+  flex-shrink: 0;
 }
 
-/* 吹き出しのしっぽ */
 .bubble::after {
   content: "";
   position: absolute;
   left: -10px;
   top: 22px;
-
   border-width: 10px;
   border-style: solid;
   border-color: transparent white transparent transparent;
 }
 
-/* スコア */
 .score {
   margin-top: 10px;
   font-size: 20px;
@@ -351,55 +340,32 @@ select:focus {
   color: #c2185b;
   margin-top: 6px;
 }
-.result-text {
-  flex: 1;
-  min-width: 320px;
-}
 
-  .result-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    gap: 18px;
-  }
-
+/* ===== スマホだけ縦並び ===== */
+@media (max-width: 768px) {
   .result-flex {
-    display: flex;
-    flex-direction: column !important;
-    align-items: center;
-    gap: 14px;
+    flex-direction: column;
   }
 
-  .result-right,
-  .result-text {
-    min-width: unset;
-    width: 100%;
-    text-align: center;
-    order: 1 !important;
+  .result-right {
+    order: 1;
   }
 
   .bubble {
-    order: 2 !important;
-    min-width: unset;
-    max-width: 260px;
+    order: 2;
     font-size: 16px;
-    margin: 6px auto 0;
+    max-width: 240px;
   }
 
   .bubble::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  transform: translateX(-50%);
-  border-width: 10px;
-  border-style: solid;
-  border-color: white transparent transparent transparent;
-}
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border-color: white transparent transparent transparent;
+  }
 
   .result-character {
-    order: 3 !important;
+    order: 3;
     flex: none;
     width: 100%;
   }
@@ -415,7 +381,6 @@ select:focus {
   .rate {
     font-size: 24px;
   }
-
 }
           </style>
 </head>
