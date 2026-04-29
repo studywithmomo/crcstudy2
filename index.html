@@ -101,11 +101,14 @@ body {
 }
 
 #result {
-  display: inline-block;
-  background: rgba(255, 183, 163, 0.2);
-  padding: 8px 18px;
-  border-radius: 999px;
-  color: #d96c55;
+  color: #e76f6f;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(231, 111, 111, 0.18);
 }
 
    #retryBtn {
@@ -213,6 +216,11 @@ select:focus {
   transform: scale(0.97);
 }
 
+#query-mode #sentence {
+  font-size: 34px;
+  line-height: 1.4;
+}
+
 @media (max-width: 768px) {
   #gameContainer {
     padding: 20px;
@@ -221,6 +229,11 @@ select:focus {
     min-height: 460px;
     background-image: rgba(255,255,255,0.95);
     backdrop-filter: blur(2px);
+  }
+
+  #query-mode #sentence {
+    font-size: 26px;
+    line-height: 1.5;
   }
 
   #sentence {
