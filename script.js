@@ -169,45 +169,58 @@ input.addEventListener("keydown", (e) => {
     showAnswerBtn.style.display = "none";
 
     resultDiv.style.display = "block";
-    resultDiv.innerHTML = `
+resultDiv.innerHTML = `
   <div style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
     background: #fff0f6;
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    text-align: center;
   ">
-    <div style="font-size:32px;">🎉</div>
-    <div style="
-      font-size:26px;
-      font-weight:bold;
-      color:#d63384;
-      margin-bottom:12px;
-    ">
-      おつかれさま！
+
+    <!-- ウーパールーパー＋吹き出し -->
+    <div style="position: relative; display: inline-block;">
+      <img src="ikimono_wooper-looper_12304.jpg" style="width:160px;">
+
+      <div style="
+        position: absolute;
+        top: -10px;
+        left: 130px;
+        background: white;
+        border: 2px solid #ffb6c1;
+        border-radius: 18px;
+        padding: 10px 14px;
+        font-size: 18px;
+        color: #5c4635;
+        max-width: 200px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      ">
+        ${rate === 100 ? "完璧！すごすぎる！" :
+          rate >= 80 ? "いいかんじ！えらいね" :
+          rate >= 60 ? "まあまあだね！" :
+          "次はもっといけるよ！"}
+      </div>
     </div>
 
-    <div style="font-size:20px; margin-bottom:8px;">
-      ${totalQuestions}問中 <b>${correctCount}</b> 問正解
+    <!-- スコア（ここが大事） -->
+    <div style="font-size:20px;">
+      ${totalQuestions}問中 <b>${correctCount}</b>問正解
     </div>
 
     <div style="
       font-size:28px;
       font-weight:bold;
       color:#c2185b;
-      margin-bottom:12px;
     ">
       正答率：${rate}%
     </div>
 
-    <div style="font-size:18px; color:#555;">
-      ${rate === 100 ? "完璧！すばらしい！" :
-        rate >= 80 ? "いいかんじ！" :
-        rate >= 60 ? "まあまあだね！" :
-        "次はもっといける！"}
-    </div>
   </div>
-`;    return;
+`;
+return;
   }
 
   currentIndex++;
