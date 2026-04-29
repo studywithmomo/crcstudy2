@@ -58,6 +58,7 @@ input.style.display = "block";
  if (questionModeSelect.value === "query") {
   sentenceDiv.textContent = item.ja;
   jpDiv.textContent = "英文を入力してください";
+  adjustQueryFontSize(item.ja);
  } else {
   sentenceDiv.textContent = item.en;
   jpDiv.textContent = "";
@@ -80,16 +81,18 @@ input.style.display = "block";
 
 function adjustSentenceFontSize(text) {
   const length = text.length;
-
-  if (length <= 40) {
-    sentenceDiv.style.fontSize = "48px";
-  } else if (length <= 80) {
-    sentenceDiv.style.fontSize = "40px";
-  } else if (length <= 120) {
+  
+if (window.innerWidth <= 768) {
+  if (length <= 20) {
+    sentenceDiv.style.fontSize = "42px";
+  } else if (length <= 40) {
     sentenceDiv.style.fontSize = "32px";
+  } else if (length <= 70) {
+    sentenceDiv.style.fontSize = "24px";
   } else {
-    sentenceDiv.style.fontSize = "26px";
+    sentenceDiv.style.fontSize = "20px";
   }
+ }
 }
 
 // --- タイピング判定 ---
