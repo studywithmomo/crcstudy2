@@ -185,7 +185,7 @@ input.addEventListener("keydown", (e) => {
     showAnswerBtn.style.display = "none";
 
     resultDiv.style.display = "block";
-resultDiv.innerHTML = `
+resultDiv.innerHTML = 
   <div class="result-card">
     <div class="result-flex">
 
@@ -214,7 +214,6 @@ resultDiv.innerHTML = `
 
     </div>
   </div>
-`;
 `;
 return;
   }
