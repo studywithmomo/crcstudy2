@@ -187,24 +187,9 @@ input.addEventListener("keydown", (e) => {
     resultDiv.style.display = "block";
 resultDiv.innerHTML = `
   <div class="result-card">
-
     <div class="result-flex">
 
-      <!-- 左：ウーパー -->
-      <div class="result-character">
-        <img src="ikimono_wooper-looper_12304.jpg" class="wooper-img">
-      </div>
-
-      <!-- 右：吹き出し＋結果 -->
       <div class="result-right">
-      
-        <div class="bubble">
-          ${rate === 100 ? "完璧！すごすぎる！" :
-            rate >= 80 ? "いいかんじ！えらいね" :
-            rate >= 60 ? "まあまあだね！" :
-            "次はもっといけるよ！"}
-        </div>
-
         <div class="score">
           ${totalQuestions}問中 <b>${correctCount}</b>問正解
         </div>
@@ -214,12 +199,22 @@ resultDiv.innerHTML = `
         </div>
 
         <button class="retry-btn" onclick="startQuiz()">もう一回</button>
-        
+      </div>
+
+      <div class="bubble">
+        ${rate === 100 ? "すばらしい！" :
+          rate >= 80 ? "いいかんじ！" :
+          rate >= 60 ? "まあまあやな" :
+          "もっとがんばれよ"}
+      </div>
+
+      <div class="result-character">
+        <img src="ikimono_wooper-looper_12304.jpg" class="wooper-img">
       </div>
 
     </div>
-
   </div>
+`;
 `;
 return;
   }
