@@ -31,6 +31,15 @@ document.getElementById("questionMode").addEventListener("change", function () {
     gameContainer.classList.remove("query-mode");
   }
 });
+
+function startQuiz() {
+  currentQuestion = 0;
+  correctCount = 0;
+  selectedQuestions = shuffleArray([...questions]).slice(0, totalQuestions);
+
+  document.getElementById("result").innerHTML = "";
+  showQuestion();
+}
 // --- 問題表示 ---
 function loadSentence() {
   
