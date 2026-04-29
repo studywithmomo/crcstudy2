@@ -1,4 +1,8 @@
-　
+　function goToStart() {
+  document.getElementById("quiz-area").style.display = "none";
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("start-screen").style.display = "block";
+}
   function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
