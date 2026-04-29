@@ -176,7 +176,7 @@ resultDiv.innerHTML = `
 
       <!-- 左：ウーパー -->
       <div class="result-character">
-        <img src="wooper.png" class="wooper-img">
+        <img src="ikimono_wooper-looper_12304.jpg" class="wooper-img">
       </div>
 
       <!-- 右：吹き出し＋結果 -->
