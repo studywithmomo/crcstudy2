@@ -306,13 +306,19 @@ select:focus {
 
 .result-flex {
   display: flex;
-  align-items: center;
+  align-items: flex-start; 
   gap: 24px;
+}
+  
+.result-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* ウーパー画像 */
 .wooper-img {
-  width: 160px;
+  width: 120px;
   border-radius: 20px; /* ←ここで“切り貼り感”消える */
   object-fit: cover;
 }
