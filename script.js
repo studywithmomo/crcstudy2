@@ -82,7 +82,7 @@ function adjustSentenceFontSize(text) {
   const length = text.length;
   const longestWord = Math.max(...text.split(" ").map(word => word.length));
 
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 900) {
     if (longestWord > 18) {
       sentenceDiv.style.fontSize = "24px";
     } else if (length <= 30) {
@@ -110,25 +110,25 @@ function adjustSentenceFontSize(text) {
 function adjustQueryFontSize(text) {
   const length = text.length;
 
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 900) {
     if (length <= 20) {
-      sentenceDiv.style.fontSize = "36px";
-    } else if (length <= 40) {
       sentenceDiv.style.fontSize = "28px";
-    } else if (length <= 70) {
+    } else if (length <= 40) {
       sentenceDiv.style.fontSize = "22px";
-    } else {
+    } else if (length <= 70) {
       sentenceDiv.style.fontSize = "18px";
+    } else {
+      sentenceDiv.style.fontSize = "16px";
     }
   } else {
     if (length <= 20) {
-      sentenceDiv.style.fontSize = "42px";
-    } else if (length <= 40) {
-      sentenceDiv.style.fontSize = "34px";
-    } else if (length <= 70) {
       sentenceDiv.style.fontSize = "28px";
+    } else if (length <= 40) {
+      sentenceDiv.style.fontSize = "22px";
+    } else if (length <= 70) {
+      sentenceDiv.style.fontSize = "18px";
     } else {
-      sentenceDiv.style.fontSize = "24px";
+      sentenceDiv.style.fontSize = "16px";
     }
   }
 }
