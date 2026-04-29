@@ -170,45 +170,37 @@ input.addEventListener("keydown", (e) => {
 
     resultDiv.style.display = "block";
 resultDiv.innerHTML = `
-  <div style="
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    background: #fff0f6;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  ">
+  <div class="result-card">
 
-       <!-- ウーパールーパー＋吹き出し -->
-    <div style="position: relative;">
-      <img src="wooper.png" style="width:160px;">
+    <div class="result-flex">
 
-      <div class="bubble" style="
-        position: absolute;
-        top: -10px;
-        left: 130px;
-      ">
-        ${rate === 100 ? "完璧！すごすぎる！" :
-          rate >= 80 ? "いいかんじ！えらいね" :
-          rate >= 60 ? "まあまあだね！" :
-          "次はもっといけるよ！"}
+      <!-- 左：ウーパー -->
+      <div class="result-character">
+        <img src="wooper.png" class="wooper-img">
       </div>
+
+      <!-- 右：吹き出し＋結果 -->
+      <div class="result-right">
+
+        <div class="bubble">
+          ${rate === 100 ? "完璧！すごすぎる！" :
+            rate >= 80 ? "いいかんじ！えらいね" :
+            rate >= 60 ? "まあまあだね！" :
+            "次はもっといけるよ！"}
+        </div>
+
+        <div class="score">
+          ${totalQuestions}問中 <b>${correctCount}</b>問正解
+        </div>
+
+        <div class="rate">
+          正答率：${rate}%
+        </div>
+
+      </div>
+
     </div>
 
-    <!-- スコア -->
-    <div style="font-size:20px;">
-      ${totalQuestions}問中 <b>${correctCount}</b>問正解
-    </div>
-
-    <div style="
-      font-size:28px;
-      font-weight:bold;
-      color:#c2185b;
-    ">
-      正答率：${rate}%
-    </div>
   </div>
 `;
 return;
