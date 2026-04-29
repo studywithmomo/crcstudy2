@@ -8,6 +8,7 @@
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
+  return array;
 }
 
 let currentIndex = 0;
@@ -37,14 +38,14 @@ document.getElementById("questionMode").addEventListener("change", function () {
 });
 
 function startQuiz() {
-  currentQuestion = 0;
-  correctCount = 0;
-  selectedQuestions = shuffleArray([...questions]).slice(0, totalQuestions);
-
   document.getElementById("result").innerHTML = "";
-  document.getElementById("quiz-area").style.display = "block";
 
-  showQuestion();
+  sentenceDiv.style.display = "block";
+  jpDiv.style.display = "block";
+  input.style.display = "block";
+  showAnswerBtn.style.display = "inline-block";
+
+  init();
 }
 // --- 問題表示 ---
 function loadSentence() {
