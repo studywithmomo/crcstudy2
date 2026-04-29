@@ -108,6 +108,32 @@ function adjustSentenceFontSize(text) {
   }
 }
 
+function adjustQueryFontSize(text) {
+  const length = text.length;
+
+  if (window.innerWidth <= 768) {
+    if (length <= 20) {
+      sentenceDiv.style.fontSize = "36px";
+    } else if (length <= 40) {
+      sentenceDiv.style.fontSize = "28px";
+    } else if (length <= 70) {
+      sentenceDiv.style.fontSize = "22px";
+    } else {
+      sentenceDiv.style.fontSize = "18px";
+    }
+  } else {
+    if (length <= 20) {
+      sentenceDiv.style.fontSize = "42px";
+    } else if (length <= 40) {
+      sentenceDiv.style.fontSize = "34px";
+    } else if (length <= 70) {
+      sentenceDiv.style.fontSize = "28px";
+    } else {
+      sentenceDiv.style.fontSize = "24px";
+    }
+  }
+}
+
 // --- タイピング判定 ---
 input.addEventListener("keydown", (e) => {
   
