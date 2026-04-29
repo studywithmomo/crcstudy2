@@ -134,20 +134,6 @@ body {
   transform: translateY(6px);
   box-shadow: 0 0 0 #d94c8a;
 }
-#rankingBox {
-  font-size: 18px;                 /* 少し小さく */
-  color: #555;
-  border: 3px solid #ffb6c1;       /* かわいいピンク枠 */
-  border-radius: 20px;             /* 丸み */
-  padding: 12px 16px;
-  margin: 20px auto;
-  width: fit-content;              /* 中身サイズに合わせる */
-  background-color: #fff;          /* 白背景で読みやすく */
-  line-height: 1.4;
-  max-height: none;       /* スクロールさせない */
-  width: 100%;
-  max-width: 500px;
-}
 
 select {
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -229,28 +215,39 @@ select:focus {
 }
 
 @media (max-width: 768px) {
+  #gameContainer {
+    padding: 20px;
+    width: 100%;
+    margin-top: 8px;
+    min-height: 460px;
+    background-image: rgba(255,255,255,0.95);
+    backdrop-filter: blur(2px);
+  }
+
   #sentence {
-    font-size: 42px;
+    font-size: 64px;
+    margin-top: 18px;
   }
 
   #jp {
-    font-size: 20px;
+    font-size: 28px;
   }
 
   #input {
-    font-size: 24px;
+    font-size: 34px;
+    padding: 18px;
   }
 
   #retryBtn,
   #showAnswerBtn {
-    font-size: 18px;
-    width: 100%;
+    font-size: 20px;
+    width: auto;
     max-width: 320px;
   }
 
-  #gameContainer {
-    padding: 15px;
-    width: 100%;
+  select {
+    font-size: 18px;
+    padding: 12px 18px;
   }
 }
           </style>
