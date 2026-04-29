@@ -181,7 +181,7 @@ resultDiv.innerHTML = `
 
       <!-- 右：吹き出し＋結果 -->
       <div class="result-right">
-
+        <button class="retry-btn" onclick="startQuiz()">もう一回</button>
         <div class="bubble">
           ${rate === 100 ? "完璧！すごすぎる！" :
             rate >= 80 ? "いいかんじ！えらいね" :
