@@ -59,18 +59,17 @@ input.style.display = "block";
   sentenceDiv.textContent = item.ja;
   jpDiv.textContent = "英文を入力してください";
   adjustQueryFontSize(item.ja);
+   
  } else {
   sentenceDiv.textContent = item.en;
   jpDiv.textContent = "";
+
+  adjustSentenceFontSize(item.en);
  }
 
   input.value = "";
   resultDiv.textContent = "";
   resultDiv.style.color = "";
-
-  if (questionModeSelect.value === "long") {
-  adjustSentenceFontSize(item.en);
-  }
   
  
   input.disabled = false;
