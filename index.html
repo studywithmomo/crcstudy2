@@ -72,6 +72,11 @@ body {
   letter-spacing: 1px;
   color: #5c4635;
 }
+#sentence {
+  display: block !important;
+  visibility: visible !important;
+  min-height: 80px;
+}
 #sentence span {
   font-family: inherit;
 }
@@ -350,8 +355,7 @@ select:focus {
   flex: 1;
   min-width: 320px;
 }
-/* ===== スマホの結果画面だけ縦並び ===== */
-@media (max-width: 768px) {
+
   .result-card {
     flex-direction: column;
     align-items: center;
@@ -362,7 +366,7 @@ select:focus {
 
   .result-flex {
     display: flex;
-    flex-direction: column;!important;
+    flex-direction: column !important;
     align-items: center;
     gap: 14px;
   }
@@ -372,11 +376,11 @@ select:focus {
     min-width: unset;
     width: 100%;
     text-align: center;
-    order: 1; !important;
+    order: 1 !important;
   }
 
   .bubble {
-    order: 2;!important;
+    order: 2 !important;
     min-width: unset;
     max-width: 260px;
     font-size: 16px;
@@ -395,7 +399,7 @@ select:focus {
 }
 
   .result-character {
-    order: 3;!important;
+    order: 3 !important;
     flex: none;
     width: 100%;
   }
@@ -411,8 +415,7 @@ select:focus {
   .rate {
     font-size: 24px;
   }
-}
-  
+
 }
           </style>
 </head>
