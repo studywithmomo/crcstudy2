@@ -58,12 +58,13 @@ input.style.display = "block";
  if (questionModeSelect.value === "query") {
   sentenceDiv.textContent = item.ja;
   jpDiv.textContent = "英文を入力してください";
+  jpDiv.style.color = "#b08a8a";
   adjustQueryFontSize(item.ja);
    
  } else {
   sentenceDiv.textContent = item.en;
   jpDiv.textContent = "";
-
+  jpDiv.style.color = "#6b4f4f";
   adjustSentenceFontSize(item.en);
  }
 
@@ -84,15 +85,15 @@ function adjustSentenceFontSize(text) {
 
   if (window.innerWidth <= 900) {
     if (longestWord > 18) {
-      sentenceDiv.style.fontSize = "24px";
+      sentenceDiv.style.fontSize = "28px";
     } else if (length <= 30) {
-      sentenceDiv.style.fontSize = "42px";
+      sentenceDiv.style.fontSize = "48px";
     } else if (length <= 60) {
-      sentenceDiv.style.fontSize = "34px";
+      sentenceDiv.style.fontSize = "38px";
     } else if (length <= 100) {
-      sentenceDiv.style.fontSize = "26px";
+      sentenceDiv.style.fontSize = "30px";
     } else {
-      sentenceDiv.style.fontSize = "20px";
+      sentenceDiv.style.fontSize = "24px";
     }
   } else {
     if (length <= 40) {
