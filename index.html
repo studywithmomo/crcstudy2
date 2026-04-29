@@ -371,6 +371,60 @@ select:focus {
   flex: 1;
   min-width: 320px;
 }
+/* ===== スマホの結果画面だけ縦並び ===== */
+@media (max-width: 768px) {
+  .result-card {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .result-flex {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .result-right,
+  .result-text {
+    min-width: unset;
+    width: 100%;
+    text-align: center;
+  }
+
+  .result-character {
+    flex: none;
+    width: 100%;
+  }
+
+  .wooper-img {
+    width: 140px;
+  }
+
+  .bubble {
+    min-width: unset;
+    max-width: 260px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+  .bubble::after {
+    left: 50%;
+    top: -18px;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .score {
+    font-size: 18px;
+  }
+
+  .rate {
+    font-size: 24px;
+  }
+}
+  
 }
           </style>
 </head>
