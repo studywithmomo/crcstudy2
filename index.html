@@ -362,7 +362,7 @@ select:focus {
 
   .result-flex {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;!important;
     align-items: center;
     gap: 14px;
   }
@@ -372,11 +372,11 @@ select:focus {
     min-width: unset;
     width: 100%;
     text-align: center;
-    order: 1;
+    order: 1; !important;
   }
 
   .bubble {
-    order: 2;
+    order: 2;!important;
     min-width: unset;
     max-width: 260px;
     font-size: 16px;
@@ -384,16 +384,18 @@ select:focus {
   }
 
   .bubble::after {
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-    border-width: 10px;
-    border-style: solid;
-    border-color: white transparent transparent transparent;
-  }
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
 
   .result-character {
-    order: 3;
+    order: 3;!important;
     flex: none;
     width: 100%;
   }
