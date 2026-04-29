@@ -37,7 +37,7 @@ document.getElementById("questionMode").addEventListener("change", function () {
   }
 });
 
-function startQuiz() {
+window.startQuiz = function() {
   document.getElementById("result").innerHTML = "";
 
   sentenceDiv.style.display = "block";
