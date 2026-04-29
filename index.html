@@ -9,25 +9,25 @@
   <style>
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: radial-gradient(circle at 20% 30%, #ffe4e1 0%, transparent 40%),
               radial-gradient(circle at 80% 70%, #e0f7fa 0%, transparent 40%),
               #fffaf3;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* ===== メインコンテナ ===== */
 #gameContainer {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin-top: 20px;
   text-align: center;
-  width: 90%;
+  width: 95%;
   max-width: 900px;
-  max-height: none; 
   padding: 25px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
@@ -178,7 +178,8 @@ select:focus {
       top: 45%;           /* 縦中央 */
       left: 50%;          /* 横中央 */
       transform: translate(-50%, -50%);
-      width: 1500px;       /* 好きな大きさに調整 */
+      width: 80vw;
+      max-width: 700px;
       opacity: 0.3;       /* ふんわり表示 */
       pointer-events: none; /* タイピングやボタン操作を邪魔しない */
       z-index: -1;        /* 背景扱い */
@@ -247,7 +248,31 @@ select:focus {
   transform: scale(0.97);
 }
 
+@media (max-width: 768px) {
+  #sentence {
+    font-size: 28px;
+  }
 
+  #jp {
+    font-size: 20px;
+  }
+
+  #input {
+    font-size: 24px;
+  }
+
+  #retryBtn,
+  #showAnswerBtn {
+    font-size: 18px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  #gameContainer {
+    padding: 15px;
+    width: 100%;
+  }
+}
           </style>
 </head>
 
