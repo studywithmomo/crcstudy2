@@ -59,7 +59,6 @@ input.style.display = "block";
   sentenceDiv.textContent = item.ja;
   jpDiv.textContent = "英文を入力してください";
   jpDiv.style.color = "#b08a8a";
-  font-family: "M PLUS Rounded 1c", sans-serif;
   adjustQueryFontSize(item.ja);
    
  } else {
