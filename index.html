@@ -306,8 +306,9 @@ select:focus {
 
 .result-flex {
   display: flex;
-  align-items: flex-start; 
-  gap: 24px;
+  justify-content: center;  
+  align-items: center;
+  gap: 28px;
 }
   
 .result-right {
@@ -316,10 +317,17 @@ select:focus {
   justify-content: flex-start;
 }
 
+.result-character {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
 /* ウーパー画像 */
 .wooper-img {
-  width: 120px;
-  border-radius: 20px; /* ←ここで“切り貼り感”消える */
+  width: 150px;
+  height: auto;
+  border-radius: 20px;
   object-fit: cover;
 }
 
