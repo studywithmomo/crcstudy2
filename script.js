@@ -113,23 +113,23 @@ function adjustQueryFontSize(text) {
 
   if (window.innerWidth <= 900) {
     if (length <= 20) {
-      sentenceDiv.style.fontSize = "28px";
+      sentenceDiv.style.fontSize = "34px";
     } else if (length <= 40) {
-      sentenceDiv.style.fontSize = "22px";
+      sentenceDiv.style.fontSize = "26px";
     } else if (length <= 70) {
-      sentenceDiv.style.fontSize = "18px";
+      sentenceDiv.style.fontSize = "22px";
     } else {
-      sentenceDiv.style.fontSize = "16px";
+      sentenceDiv.style.fontSize = "20px";
     }
   } else {
     if (length <= 20) {
-      sentenceDiv.style.fontSize = "28px";
+      sentenceDiv.style.fontSize = "32px";
     } else if (length <= 40) {
-      sentenceDiv.style.fontSize = "22px";
+      sentenceDiv.style.fontSize = "26px";
     } else if (length <= 70) {
-      sentenceDiv.style.fontSize = "18px";
+      sentenceDiv.style.fontSize = "22px";
     } else {
-      sentenceDiv.style.fontSize = "16px";
+      sentenceDiv.style.fontSize = "20px";
     }
   }
 }
