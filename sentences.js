@@ -222,16 +222,16 @@ const sentenceData = {
   },
 
   query: [
-  { ja: "確認し更新しました", en: "Confirmed and updated." },
-  { ja: "修正不要", en: "No change required." },
-  { ja: "確認後に回答します", en: "We will provide an update once confirmed." },
-  { ja: "原資料に基づき入力を更新しました", en: "The entry has been updated based on source documents." },
-  { ja: "更新後の記録をご確認ください", en: "Please refer to the updated record." },
-  { ja: "臨床的意義なし", en: "No clinical significance." },
-  { ja: "原疾患によるもの", en: "Due to desease." },
-  { ja: "合併症によるもの", en: "Due to complications." },
-  { ja: "有害事象によるもの", en: "Due to adverse events." },
-  { ja: "治験薬との関連あり", en: "Related to the investigational product." }
+  { ja: "「確認し更新しました」", en: "Confirmed and updated." },
+  { ja: "「修正不要」", en: "No change required." },
+  { ja: "「確認後に回答します」", en: "We will provide an update once confirmed." },
+  { ja: "「原資料に基づき入力を更新しました」", en: "The entry has been updated based on source documents." },
+  { ja: "「更新後の記録をご確認ください」", en: "Please refer to the updated record." },
+  { ja: "「臨床的意義なし」", en: "No clinical significance." },
+  { ja: "「原疾患によるもの」", en: "Due to desease." },
+  { ja: "「合併症によるもの」", en: "Due to complications." },
+  { ja: "「有害事象によるもの」", en: "Due to adverse events." },
+  { ja: "「治験薬との関連あり」", en: "Related to the investigational product." }
 
   ]
 };
