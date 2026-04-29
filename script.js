@@ -42,6 +42,8 @@ function startQuiz() {
   selectedQuestions = shuffleArray([...questions]).slice(0, totalQuestions);
 
   document.getElementById("result").innerHTML = "";
+  document.getElementById("quiz-area").style.display = "block";
+
   showQuestion();
 }
 // --- 問題表示 ---
