@@ -81,18 +81,31 @@ input.style.display = "block";
 
 function adjustSentenceFontSize(text) {
   const length = text.length;
-  
-if (window.innerWidth <= 768) {
-  if (length <= 20) {
-    sentenceDiv.style.fontSize = "42px";
-  } else if (length <= 40) {
-    sentenceDiv.style.fontSize = "32px";
-  } else if (length <= 70) {
-    sentenceDiv.style.fontSize = "24px";
+  const longestWord = Math.max(...text.split(" ").map(word => word.length));
+
+  if (window.innerWidth <= 768) {
+    if (longestWord > 18) {
+      sentenceDiv.style.fontSize = "24px";
+    } else if (length <= 30) {
+      sentenceDiv.style.fontSize = "42px";
+    } else if (length <= 60) {
+      sentenceDiv.style.fontSize = "34px";
+    } else if (length <= 100) {
+      sentenceDiv.style.fontSize = "26px";
+    } else {
+      sentenceDiv.style.fontSize = "20px";
+    }
   } else {
-    sentenceDiv.style.fontSize = "20px";
+    if (length <= 40) {
+      sentenceDiv.style.fontSize = "48px";
+    } else if (length <= 80) {
+      sentenceDiv.style.fontSize = "40px";
+    } else if (length <= 120) {
+      sentenceDiv.style.fontSize = "32px";
+    } else {
+      sentenceDiv.style.fontSize = "26px";
+    }
   }
- }
 }
 
 // --- タイピング判定 ---
