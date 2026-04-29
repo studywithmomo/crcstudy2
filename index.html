@@ -121,30 +121,21 @@ body {
   text-shadow: 0 2px 4px rgba(231, 111, 111, 0.18);
 }
 
-   #retryBtn {
-  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
-  color: white;
+  .retry-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 999px; /* 超丸い */
-  padding: 14px 32px;
+  border-radius: 14px;
+  background: #ff8fb1;
+  color: white;
   font-size: 18px;
-  font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", sans-serif;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 6px 0 #d94c8a;
-  transition: transform 0.1s, box-shadow 0.1s;
-  display: block;
-  margin: 20px auto;
-
+  transition: 0.2s;
 }
 
-#retryBtn:hover {
-  transform: translateY(2px);
-  box-shadow: 0 4px 0 #d94c8a;
-}
-
-#retryBtn:active {
-  transform: translateY(6px);
-  box-shadow: 0 0 0 #d94c8a;
+.retry-btn:hover {
+  transform: scale(1.05);
 }
 
 select {
