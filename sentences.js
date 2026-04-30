@@ -178,6 +178,10 @@ const sentenceData = {
       { en: "swell", ja: "腫れる" },
       { en: "tenderness", ja: "圧痛" },
       { en: "thirst", ja: "口渇" },
+      { en: "scarring", ja: "瘢痕" },
+      { en: "mucous membrane", ja: "粘膜" },
+      { en: "alopecia", ja: "脱毛症" },
+      { en: "dyspigmentation", ja: "色素異常" },
       { en: "upset stomach", ja: "胃のむかつき" }
      
     ],
