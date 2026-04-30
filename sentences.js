@@ -199,6 +199,7 @@ const sentenceData = {
       { en: "Not done", ja: "未判定" },
       { en: "Absence", ja: "なし" },
       { en: "ongoing", ja: "継続中" },
+      { en: "NOS", ja: "詳細不明" },
       { en: "unit", ja: "単位" },
       { en: "b.i.d", ja: "一日二回" },
       { en: "qd", ja: "一日一回" },
