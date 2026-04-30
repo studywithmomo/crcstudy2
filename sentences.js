@@ -6,6 +6,7 @@ const sentenceData = {
       { en: "PRT", ja: "治験実施計画書" },
       { en: "IRB", ja: "治験審査委員会" },
       { en: "double-blind study", ja: "二重盲検試験" },
+      { en: "DBPC", ja: "二重盲検プラセボ対照" },
       { en: "Randomized Controlled Trial", ja: "無作為化比較試験" },
       { en: "overall survival", ja: "全生存期間" },   
       { en: "general information", ja: "概要" },
@@ -68,7 +69,9 @@ const sentenceData = {
       { en: "LPI", ja: "最後の患者登録" },
       { en: "ICH", ja: "医薬品規制調和国際会議" },
       { en: "EDC", ja: "電子的臨床検査情報収集システム" },
-      { en: "GCP", ja: "医薬品の臨床試験の実施に関する手順" }
+      { en: "allocation", ja: "割付" },
+      { en: "candidate", ja: "候補" },
+      { en: "GCP", ja: "医薬品の臨床試験の実施に関する基準" }
   
     ],
 
@@ -123,9 +126,7 @@ const sentenceData = {
       { en: "ringing", ja: "耳鳴り" },
       { en: "chest tightness", ja: "胸部圧迫感" },
       { en: "complaint", ja: "病訴" },
-      { en: "constricting pain", ja: "締め付けられるような痛み" },
       { en: "convulsion", ja: "痙攣" },
-      { en: "cramping", ja: "締め付けられるような痛み" },
       { en: "cyanosis", ja: "チアノーゼ" },
       { en: "dehydration", ja: "脱水" },
       { en: "delirium", ja: "せん妄" },
@@ -232,8 +233,7 @@ const sentenceData = {
   { ja: "「臨床的意義なし」", en: "No clinical significance." },
   { ja: "「原疾患によるもの」", en: "Due to desease." },
   { ja: "「合併症によるもの」", en: "Due to complications." },
-  { ja: "「有害事象によるもの」", en: "Due to adverse events." },
-  { ja: "「治験薬との関連あり」", en: "Related to the investigational product." }
+  { ja: "「有害事象によるもの」", en: "Due to adverse events." }
 
   ]
 };
