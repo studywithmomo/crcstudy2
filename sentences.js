@@ -196,10 +196,13 @@ const sentenceData = {
       { en: "subcutaneous injection", ja: "皮下注射" },
       { en: "topical administration", ja: "局所投与" },
       { en: "N/A", ja: "該当なし" },
+      { en: "Not done", ja: "未判定" },
+      { en: "Absence", ja: "なし" },
+      { en: "ongoing", ja: "継続中" },
       { en: "unit", ja: "単位" },
-      { en: "b.i.d", ja: "１日２回" },
-      { en: "qd", ja: "１日１回" },
-      { en: "q.i.d", ja: "１日４回" },
+      { en: "b.i.d", ja: "一日二回" },
+      { en: "qd", ja: "一日一回" },
+      { en: "q.i.d", ja: "一日四回" },
       { en: "mal", ja: "～回" },
       { en: "a.c", ja: "食前" },
       { en: "p.c", ja: "食後" },
@@ -209,7 +212,7 @@ const sentenceData = {
       { en: "z.d.E", ja: "食間" },
       { en: "h.s", ja: "就寝前" },
       { en: "p.r.n", ja: "頓服" },
-      { en: "t.i.d", ja: "１日３回" }
+      { en: "t.i.d", ja: "一日三回" }
 
 
     ]
