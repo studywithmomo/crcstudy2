@@ -99,8 +99,9 @@ input.style.display = "block";
  }
 
   input.value = "";
-  resultDiv.textContent = "";
+  resultDiv.innerHTML = "";
   resultDiv.style.color = "";
+  resultDiv.style.textShadow = "";
   
  
   input.disabled = false;
@@ -181,13 +182,26 @@ input.addEventListener("keydown", (e) => {
       resultDiv.style.display = "block";
 
       if (usedHint) {
-        resultDiv.style.color = "#5bbad5";
-        resultDiv.textContent = "Good";
-      } else {
-        resultDiv.style.color = "#c2185b";
-        resultDiv.textContent = "Correct!";
-        resultDiv.style.textShadow = "0 0 8px rgba(126, 200, 227, 0.5)";
-      }
+  resultDiv.innerHTML = `
+    <span style="
+      color:#5bbad5;
+      text-shadow:0 0 8px rgba(91,186,213,0.45);
+      font-weight:bold;
+    ">
+      Good
+    </span>
+  `;
+} else {
+  resultDiv.innerHTML = `
+    <span style="
+      color:#c2185b;
+      text-shadow:0 0 8px rgba(194,24,91,0.35);
+      font-weight:bold;
+    ">
+      Correct!
+    </span>
+  `;
+}
 
       input.disabled = true;
 
