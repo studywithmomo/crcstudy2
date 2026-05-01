@@ -161,10 +161,16 @@ input.addEventListener("keydown", (e) => {
 
     const typed = input.value.trim();
 
-   if (typed === target && !usedHint) {
-      resultDiv.style.display = "block";
-      resultDiv.style.color = "#c2185b";
-      resultDiv.textContent = "Correct!";
+  if (typed === target) {
+     resultDiv.style.display = "block";
+
+  if (usedHint) {
+     resultDiv.style.color = "#888";
+     resultDiv.textContent = "Good";
+      } else {
+     resultDiv.style.color = "#c2185b";
+     resultDiv.textContent = "Correct!";
+  }
 
       input.disabled = true;
 
@@ -233,9 +239,6 @@ return;
   resultDiv.style.display = "block";
 
   if (usedHint) {
-    resultDiv.style.color = "#888";
-    resultDiv.textContent = "ヒント使用済みのため不正解";
-  } else {
     resultDiv.style.color = "red";
     resultDiv.textContent = "Miss!";
   }
