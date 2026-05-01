@@ -98,6 +98,9 @@ input.style.display = "block";
   input.style.display = "block";
   //input.scrollIntoView({ behavior: "smooth", block: "center" });
   input.focus();
+
+  sentenceDiv.style.visibility = "visible";
+  jpDiv.style.visibility = "visible";
 }
 
 function adjustSentenceFontSize(text) {
