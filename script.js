@@ -181,11 +181,12 @@ input.addEventListener("keydown", (e) => {
       resultDiv.style.display = "block";
 
       if (usedHint) {
-        resultDiv.style.color = "#7ec8e3";
+        resultDiv.style.color = "#5bbad5";
         resultDiv.textContent = "Good";
       } else {
         resultDiv.style.color = "#c2185b";
         resultDiv.textContent = "Correct!";
+        resultDiv.style.textShadow = "0 0 8px rgba(126, 200, 227, 0.5)";
       }
 
       input.disabled = true;
