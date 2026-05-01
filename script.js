@@ -181,7 +181,7 @@ input.addEventListener("keydown", (e) => {
       resultDiv.style.display = "block";
 
       if (usedHint) {
-        resultDiv.style.color = "#888";
+        resultDiv.style.color = "#7ec8e3";
         resultDiv.textContent = "Good";
       } else {
         resultDiv.style.color = "#c2185b";
