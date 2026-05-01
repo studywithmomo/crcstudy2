@@ -193,14 +193,18 @@ input.addEventListener("keydown", (e) => {
   `;
 } else {
   resultDiv.innerHTML = `
-    <span style="
-      color:#c2185b;
-      text-shadow:0 0 8px rgba(194,24,91,0.35);
-      font-weight:bold;
-    ">
-      Correct!
-    </span>
-  `;
+  <span style="
+    color:#ff5fa2;
+    text-shadow:0 0 12px rgba(255,95,162,0.45);
+    font-weight:bold;
+    font-size:2.4rem;
+    letter-spacing:1px;
+    transform:scale(1.08);
+    display:inline-block;
+  ">
+    Correct!
+  </span>
+`;
 }
 
       input.disabled = true;
