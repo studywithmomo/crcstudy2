@@ -2,6 +2,7 @@
   document.getElementById("quiz-area").style.display = "none";
   document.getElementById("result").innerHTML = "";
   document.getElementById("start-screen").style.display = "block";
+  wordCategorySelect.style.display = "inline-block";
 }
   function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -38,15 +39,19 @@ document.getElementById("questionMode").addEventListener("change", function () {
 });
 
 window.startQuiz = function() {
+  document.getElementById("start-screen").style.display = "none";
+  document.getElementById("quiz-area").style.display = "block";
   document.getElementById("result").innerHTML = "";
 
   sentenceDiv.style.display = "block";
   jpDiv.style.display = "block";
   input.style.display = "block";
   showAnswerBtn.style.display = "inline-block";
+  wordCategorySelect.style.display = "inline-block";
 
   init();
 }
+
 // --- 問題表示 ---
 function loadSentence() {
   
