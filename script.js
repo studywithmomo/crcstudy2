@@ -2,7 +2,8 @@
   document.getElementById("quiz-area").style.display = "none";
   document.getElementById("result").innerHTML = "";
   document.getElementById("start-screen").style.display = "block";
-  wordCategorySelect.style.display = "inline-block";
+
+  updateSelectVisibility();
 }
   function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -44,10 +45,18 @@ window.startQuiz = function() {
   document.getElementById("result").innerHTML = "";
 
   sentenceDiv.style.display = "block";
+  sentenceDiv.style.visibility = "visible";
+
   jpDiv.style.display = "block";
+  jpDiv.style.visibility = "visible";
+
   input.style.display = "block";
+  input.style.visibility = "visible";
+
   showAnswerBtn.style.display = "inline-block";
-  wordCategorySelect.style.display = "inline-block";
+  showAnswerBtn.style.visibility = "visible";
+
+  updateSelectVisibility();
 
   init();
 }
