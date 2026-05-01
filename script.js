@@ -152,100 +152,90 @@ function adjustQueryFontSize(text) {
 
 // --- タイピング判定 ---
 input.addEventListener("keydown", (e) => {
-  
   if (e.key === "Enter") {
     const target =
-    questionModeSelect.value === "query"
-    ? currentList[currentIndex].en.trim()
-    : currentList[currentIndex].ja.trim(); 
+      questionModeSelect.value === "query"
+        ? currentList[currentIndex].en.trim()
+        : currentList[currentIndex].ja.trim();
 
     const typed = input.value.trim();
 
-  if (typed === target) {
-     resultDiv.style.display = "block";
+    if (typed === target) {
+      resultDiv.style.display = "block";
 
-  if (usedHint) {
-     resultDiv.style.color = "#888";
-     resultDiv.textContent = "Good";
+      if (usedHint) {
+        resultDiv.style.color = "#888";
+        resultDiv.textContent = "Good";
       } else {
-     resultDiv.style.color = "#c2185b";
-     resultDiv.textContent = "Correct!";
-  }
+        resultDiv.style.color = "#c2185b";
+        resultDiv.textContent = "Correct!";
+      }
 
       input.disabled = true;
 
-     setTimeout(() => {
-  
-  quizCount++;
+      setTimeout(() => {
+        quizCount++;
 
-  if (!usedHint) {
-  correctCount++;
+        if (!usedHint) {
+          correctCount++;
+        }
+
+        if (quizCount >= totalQuestions) {
+          const rate = Math.round((correctCount / totalQuestions) * 100);
+
+          sentenceDiv.style.display = "none";
+          jpDiv.style.display = "none";
+          input.style.display = "none";
+          showAnswerBtn.style.display = "none";
+
+          resultDiv.style.display = "block";
+          resultDiv.innerHTML = `
+            <div class="result-card">
+              <div class="result-flex">
+                <div class="result-right">
+                  <div class="score">
+                    ${totalQuestions}問中 <b>${correctCount}</b>問正解
+                  </div>
+                  <div class="rate">
+                    正答率：${rate}%
+                  </div>
+                  <button class="retry-btn" onclick="startQuiz()">もう一回</button>
+                </div>
+
+                <div class="bubble">
+                  ${rate === 100 ? "すばらしい！" :
+                    rate >= 80 ? "いいかんじ！" :
+                    rate >= 60 ? "まあまあやな" :
+                    "もっとがんばれよ"}
+                </div>
+
+                <div class="result-character">
+                  <img src="ikimono_wooper-looper_12304.jpg" class="wooper-img">
+                </div>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        currentIndex++;
+
+        if (currentIndex >= currentList.length) {
+          currentIndex = 0;
+          shuffleArray(currentList);
+        }
+
+        input.disabled = false;
+        loadSentence();
+      }, 2000);
+
+    } else {
+      resultDiv.style.display = "block";
+      resultDiv.style.color = "red";
+      resultDiv.textContent = "Miss!";
+    }
   }
-
-  if (quizCount >= totalQuestions) {
-    const rate = Math.round((correctCount / totalQuestions) * 100);
-
-    sentenceDiv.style.display = "none";
-    jpDiv.style.display = "none";
-    input.style.display = "none";
-    showAnswerBtn.style.display = "none";
-
-    resultDiv.style.display = "block";
-resultDiv.innerHTML = `
-  <div class="result-card">
-    <div class="result-flex">
-
-      <div class="result-right">
-        <div class="score">
-          ${totalQuestions}問中 <b>${correctCount}</b>問正解
-        </div>
-
-        <div class="rate">
-          正答率：${rate}%
-        </div>
-
-        <button class="retry-btn" onclick="startQuiz()">もう一回</button>
-      </div>
-
-      <div class="bubble">
-        ${rate === 100 ? "すばらしい！" :
-          rate >= 80 ? "いいかんじ！" :
-          rate >= 60 ? "まあまあやな" :
-          "もっとがんばれよ"}
-      </div>
-
-      <div class="result-character">
-        <img src="ikimono_wooper-looper_12304.jpg" class="wooper-img">
-      </div>
-
-    </div>
-  </div>
-`;
-return;
-  }
-
-  currentIndex++;
-
-  if (currentIndex >= currentList.length) {
-    currentIndex = 0;
-    shuffleArray(currentList);
-  }
-
-  input.disabled = false;
-  loadSentence();
-}, 2000); 
-
-   else {
-  resultDiv.style.display = "block";
-
-  if (usedHint) {
-    resultDiv.style.color = "red";
-    resultDiv.textContent = "Miss!";
-  }
-}
-}); 
- 
-
+});
 // --- 初期化 ---
 function init() {
   quizCount = 0;
