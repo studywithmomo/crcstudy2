@@ -40,7 +40,6 @@ document.getElementById("questionMode").addEventListener("change", function () {
 });
 
 window.startQuiz = function() {
-  console.log("startQuiz 動いた"); // ←追加
   
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("quiz-area").style.display = "block";
@@ -354,4 +353,9 @@ function updateSelectVisibility() {
   wordCategorySelect.style.display = 
     questionModeSelect.value === "word" ? "inline-block" : "none";
 }
-
+document.addEventListener("click", (e) => {
+  if (e.target && e.target.id === "retryBtn") {
+    console.log("retryBtn 押された"); // デバッグ用
+    startQuiz();
+  }
+});
