@@ -253,6 +253,11 @@ input.addEventListener("keydown", (e) => {
               </div>
             </div>
           `;
+      const retryBtn = document.getElementById("retryBtn");
+      if (retryBtn) {
+      retryBtn.addEventListener("click", startQuiz);
+      }
+          
           return;
         }
 
