@@ -29,6 +29,7 @@ body {
   text-align: center;
   width: 95%;
   max-width: 900px;
+  min-height: 500px;
   padding: 25px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
@@ -41,7 +42,7 @@ body {
   margin-top: 24px;
   color: #5c4635;
   max-width: 100%;
-  word-wrap: break-word;
+  word-break: normal;
   overflow-wrap: break-word;
   white-space: normal;
   word-break: break-word;
@@ -230,6 +231,9 @@ select:focus {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
   transition: all 0.25s ease;
+ writing-mode: horizontal-tb; 
+  white-space: nowrap;
+  display: inline-block;
 }
 
 #showAnswerBtn:hover {
