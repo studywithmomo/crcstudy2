@@ -258,11 +258,6 @@ input.addEventListener("keydown", (e) => {
               </div>
             </div>
           `;
-      const retryBtn = document.getElementById("retryBtn");
-      if (retryBtn) {
-      retryBtn.addEventListener("click", startQuiz);
-      }
-          
           return;
         }
 
@@ -358,8 +353,9 @@ function updateSelectVisibility() {
     questionModeSelect.value === "word" ? "inline-block" : "none";
 }
 document.addEventListener("click", (e) => {
-  if (e.target && e.target.id === "retryBtn") {
-    console.log("retryBtn 押された"); // デバッグ用
+  const btn = e.target.closest("#retryBtn");
+  if (btn) {
+    console.log("retryBtn 押された");
     startQuiz();
   }
 });
