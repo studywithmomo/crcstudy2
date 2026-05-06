@@ -237,7 +237,7 @@ input.addEventListener("keydown", (e) => {
                   <div class="rate">
                     正答率：${rate}%
                   </div>
-                  <button class="retry-btn" onclick="startQuiz()">もう一回</button>
+                 <button class="retry-btn" id="retryBtn">もう一回</button>
                 </div>
 
                 <div class="bubble">
