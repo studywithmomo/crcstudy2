@@ -40,27 +40,31 @@ document.getElementById("questionMode").addEventListener("change", function () {
 });
 
 window.startQuiz = function() {
-  
-  document.getElementById("start-screen").style.display = "none";
-  document.getElementById("quiz-area").style.display = "block";
-  
-  document.getElementById("result").innerHTML = "";
+
+  const startScreen = document.getElementById("start-screen");
+  if (startScreen) {
+    startScreen.style.display = "none";
+  }
+
+  const quizArea = document.getElementById("quiz-area");
+  if (quizArea) {
+    quizArea.style.display = "block";
+  }
+
+  resultDiv.innerHTML = "";
   resultDiv.style.display = "none";
-  
+
   sentenceDiv.style.display = "block";
-  sentenceDiv.style.visibility = "visible";
-
   jpDiv.style.display = "block";
-  jpDiv.style.visibility = "visible";
-
   input.style.display = "block";
-  input.style.visibility = "visible";
-
   showAnswerBtn.style.display = "inline-block";
+
+  sentenceDiv.style.visibility = "visible";
+  jpDiv.style.visibility = "visible";
+  input.style.visibility = "visible";
   showAnswerBtn.style.visibility = "visible";
 
   updateSelectVisibility();
-
   init();
 }
 
