@@ -42,8 +42,10 @@ document.getElementById("questionMode").addEventListener("change", function () {
 window.startQuiz = function() {
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("quiz-area").style.display = "block";
+  
   document.getElementById("result").innerHTML = "";
-
+  resultDiv.style.display = "none";
+  
   sentenceDiv.style.display = "block";
   sentenceDiv.style.visibility = "visible";
 
