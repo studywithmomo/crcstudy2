@@ -40,6 +40,8 @@ document.getElementById("questionMode").addEventListener("change", function () {
 });
 
 window.startQuiz = function() {
+  console.log("startQuiz 動いた"); // ←追加
+  
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("quiz-area").style.display = "block";
   
