@@ -349,6 +349,18 @@ select:focus {
 
 /* ===== スマホだけ縦並び ===== */
 @media (max-width: 768px) {
+   #controls {
+    display: flex;
+    flex-direction: row; /* 横並び固定 */
+    justify-content: center;
+    gap: 8px;
+  }
+
+  select {
+    font-size: 16px;
+    padding: 10px;
+    width: auto;
+  }
   .result-flex {
     flex-direction: column;
   }
